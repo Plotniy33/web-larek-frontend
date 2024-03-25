@@ -2,8 +2,8 @@
 export interface IAppState {
 	catalog: IProduct[]; // Каталог товаров
 	basket: string[]; // Товары в корзине
-	order: IOrder; // Описание заказа
-	preview: string; //  Идентификатор товара для предпросмотра
+	order: IOrder | null; // Описание заказа
+	preview: string | null; //  Идентификатор товара для предпросмотра
 }
 
 //  Интерфейс для типов структуры данных товара
@@ -31,10 +31,12 @@ export interface IContactForm {
 // Интерфейс данных заказа
 export interface IOrder extends IDeliveryForm, IContactForm {
 	items: string[]; // Список товаров
+	total: number; // Общая сумма заказа
 }
 
 // Типизация ошибок валидации формы
 export type FormErrors = Partial<Record<keyof IOrder, string>>;
+
 
 //  Интерфейс для результата оформления заказа
 export interface IOrderResult {
