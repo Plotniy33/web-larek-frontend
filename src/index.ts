@@ -16,9 +16,10 @@ import { Success } from './components/common/Success';
 const events = new EventEmitter();
 const api = new LarekApi(CDN_URL, API_URL);
 
-events.onAll(({ eventName, data }) => {
-	console.log(eventName, data);
-});
+// не засираем конслоль
+// events.onAll(({ eventName, data }) => {
+// 	console.log(eventName, data);
+// });
 
 const cardCatalogTemplate = ensureElement<HTMLTemplateElement>('#card-catalog');
 const cardPreviewTemplate = ensureElement<HTMLTemplateElement>('#card-preview');

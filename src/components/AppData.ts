@@ -80,6 +80,7 @@ export class AppState extends Model<IAppState> {
 		this.emitChanges('items:changed', { catalog: this.catalog });
 	}
 
+
 	// Установить товар для предпросмотра
 	setPreview(item: Product) {
 		this.preview = item.id;
